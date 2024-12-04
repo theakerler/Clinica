@@ -4,6 +4,13 @@
 
 
 @layer components {
+    .show-animation {
+        animation: showAnimation 0.5s ease forwards;
+    }
+    
+    .hide-animation {
+        animation: hideAnimation 0.5s ease forwards;
+    }
 
     .procedure-selected {
         transform: scale(1.05); /* Escala al 105% */
@@ -15,25 +22,25 @@
     .procedure-unselected {
         transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
     }
-/* Transición personalizada */
-.menu-transition {
-    transition: all 1s ease-in-out;
-    overflow: hidden; /* Necesario para ocultar contenido durante la transición */
-    max-height: 0; /* Altura inicial (colapsada) */
-}
-.menu-transition_leave {
-    transition: all .5s ease-in-out;
-    overflow: hidden; /* Necesario para ocultar contenido durante la transición */
-    max-height: 0; /* Altura inicial (colapsada) */
-}
+    /* Transición personalizada */
+    .menu-transition {
+        transition: all 1s ease-in-out;
+        overflow: hidden; /* Necesario para ocultar contenido durante la transición */
+        max-height: 0; /* Altura inicial (colapsada) */
+    }
+    .menu-transition_leave {
+        transition: all .5s ease-in-out;
+        overflow: hidden; /* Necesario para ocultar contenido durante la transición */
+        max-height: 0; /* Altura inicial (colapsada) */
+    }
 
-.menu-expanded {
-    max-height: 500px; /* Altura máxima durante la expansión (ajustar según contenido) */
-}
+    .menu-expanded {
+        max-height: 500px; /* Altura máxima durante la expansión (ajustar según contenido) */
+    }
 
-.menu-collapsed {
-    max-height: 0; /* Altura final al colapsar */
-}
+    .menu-collapsed {
+        max-height: 0; /* Altura final al colapsar */
+    }
 
 
 
@@ -61,6 +68,28 @@
         
     }
 
+    @keyframes showAnimation {
+        from {
+            opacity: 0;
+            max-height: 0;
+        }
+        to {
+            opacity: 1;
+            max-height: 150px; /* Ajusta la altura máxima según el contenido */
+        }
+    }
+    
+    /* Keyframe para ocultar el submenú */
+    @keyframes hideAnimation {
+        from {
+            opacity: 1;
+            max-height: 150px; /* Misma altura que en el showAnimation */
+        }
+        to {
+            opacity: 0;
+            max-height: 0;
+        }
+    }
     
 
     /* Clase base para la animación de typing */
@@ -148,13 +177,7 @@
     }
     
     /* Clases para aplicar las animaciones */
-    .show-animation {
-        animation: showAnimation 0.5s ease forwards;
-    }
     
-    .hide-animation {
-        animation: hideAnimation 0.5s ease forwards;
-    }
     .loader svg path {
         stroke-dasharray: 1000;
         stroke-dashoffset: 1000;

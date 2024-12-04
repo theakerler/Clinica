@@ -1,0 +1,82 @@
+Despues de instalar dependencias tienes que copiar esto en vte.confg
+
+    import { defineConfig } from 'vite';
+    import laravel from 'laravel-vite-plugin';
+    import vue from '@vitejs/plugin-vue';
+
+    export default defineConfig({
+        plugins: [
+            laravel({
+                input: [
+                    'resources/sass/app.scss',
+                    'resources/js/app.js',
+                ],
+                refresh: true,
+            }),
+            vue() // Asegúrate de que el plugin de Vue esté aquí
+        ],
+    });
+
+
+
+Datos para el frontend
+
+-- Tabla Cirugía --
+INSERT INTO `cirugias` (`id`, `nombre`, `descripcion_corta`, `descripcion_larga`,`costo`, `imagen`, `created_at`, `updated_at`) VALUES
+(1, 'Rinoplastia', 'Redefine la armonía de tu rostro con una nariz que se ajuste a tus facciones. Cirugías personalizadas para resultados naturales.', 'La cirugía de perfilamiento de nariz o rinoplastia consisten en mejorar\r\nmediante cirugía de forma permanente la silueta de la pirámide nasal, que\r\nincluye el dorso y la punta nasal. Los resultados no solo buscan una nariz\r\ncon mayor armonía, sino es necesario la evaluación del funcionamiento de la\r\nnariz interna (tabique y cornetes).',900.00, 'img1.webp', NULL, NULL),
+(2, 'Mamoplastia', 'Aumenta o reduce el tamaño de tus senos para lograr la forma deseada. Resultados armoniosos y naturales.', 'La cirugía de aumento de mamas permite mediante la colocación de\r\nimplantes artificiales retromamarios aumentar el busto de una mujer a la\r\nmedida deseada. Esto permite mejorar las curvaturas de una mujer. Es\r\nnecesaria la evaluación de un especialista para encontrar la talla ideal.',500.00, 'img2.webp', NULL, NULL),
+(3, 'Blefaroplastia', 'Rejuvenece tu mirada eliminando el exceso de piel y bolsas de los párpados. Frescura y juventud en tu rostro.', 'Con este procedimiento es posible mejorar los signos de envejecimiento\r\nnatural que tienen los parpados. Las arrugas que presentan los parpados con\r\nla edad puede ser corregidos con resultados excelentes a corto plazo y\r\nduraderos.',1000.00, 'img3.webp', NULL, NULL),
+(4, 'Lifting facial', 'Rejuvenece tu mirada eliminando el exceso de piel y bolsas de los párpados. Frescura y juventud en tu rostro.', 'Una cirugía compleja que consiste en rejuvenecer el rostro tanto para\r\nhombres como mujeres obteniendo mejora duradera de las arrugas y caída\r\nde la piel que no es comparable con ningún tratamiento estético tipo tópico\r\n(cremas) o colocación de hilos artificiales. Con esta cirugía es posible\r\nrejuvenecer las facciones de la piel. ',1500.00, 'img4.webp', NULL, NULL),
+(5, 'Liposucción + lipoinjerto:', 'Elimina grasa localizada y define tu silueta, reubicando el volumen donde lo necesitas. Esculpe tu cuerpo.', 'Esta cirugía mediante aspiración por succión negativa de la grasa corporal\r\nnos permite disminuir el exceso de tejido adiposo de abdomen (“disminuir la\r\ngrasa abdominal”), proveniente de alimentación no saludable o\r\nsedentarismo. Además se podrá hacer uso de esta grasa extraída para\r\nreinsertarla en zona glúteo mejorando notablemente la silueta de una mujer.',2000.00, 'img5.webp', NULL, NULL),
+(6, 'Lipodermoplastia', 'Moldea tu abdomen eliminando grasa y piel sobrante. Define tu figura con resultados naturales y duraderos.', 'La lipodermoplastia es un procedimiento quirúrgico que combina la liposucción y la cirugía estética para eliminar el exceso de grasa y mejorar la apariencia de la piel en ciertas áreas del cuerpo. Este tratamiento es ideal para quienes desean moldear su figura y eliminar bolsas de grasa resistentes a dietas y ejercicio.',3000.00, 'img6.webp', NULL, NULL);
+
+-- Tabla mensajes --
+INSERT INTO `mensajes` (`id`, `mensaje`, `created_at`, `updated_at`) VALUES
+(1, '“Doctores 100% capacitados”', NULL, NULL),
+(2, '\"Descubre una nueva versión de ti.\"', NULL, NULL),
+(3, '\"Logra una piel tersa y rejuvenecida.\"', NULL, NULL),
+(4, '\"Cirugías que marcan la diferencia.\"', NULL, NULL),
+(5, '\"El arte de la estética, a tu alcance.\"', NULL, NULL),
+(6, '\"Descubre una nueva versión de ti.\"', NULL, NULL),
+(7, '\"Renueva tu piel, revitaliza tu confianza.\"', NULL, NULL),
+(8, '\"Luce como siempre lo imaginaste.\"', NULL, NULL);
+
+
+-- Tabla testimonios --
+INSERT INTO `testimonios` (`id`, `nombre`, `servicio`, `testimonio`, `imagen`, `created_at`, `updated_at`) VALUES
+(1, 'Ana Maria', 'Rinoplastia', '\"Decidí hacerme una rinoplastia para corregir la forma de mi nariz, que siempre me había incomodado. La experiencia fue increíble, desde la consulta hasta la recuperación. Ahora me siento más segura y feliz con mi apariencia; definitivamente fue una de las mejores decisiones de mi vida.\"', 'VaPp3ZyxswLi5BsEx3wTHp2TckmKErZeCHSQfAkr.webp', '2024-11-25 17:19:23', '2024-11-25 17:19:23'),
+(2, 'Alisson', 'Mamoplastia', '\"Decidí someterme a una mamoplastia para aumentar el tamaño de mis senos y mejorar mi figura. El proceso fue muy profesional y el equipo médico me brindó un gran apoyo. Ahora me siento más confiada y satisfecha con mi cuerpo; ha sido una transformación maravillosa.\"', 'Jv67bGtlnJmrZ20MC6CB6KNI1yro2bFhZHIPCGVW.webp', '2024-11-25 17:22:36', '2024-11-25 17:22:36'),
+(3, 'Marta Rodríguez', 'Inyecciones de Botox', '\"Me hice el tratamiento de Botox para suavizar las arrugas en mi frente y alrededor de los ojos. La experiencia fue excelente y el resultado fue natural. Ahora me siento más fresca y rejuvenecida, lo que ha mejorado mi confianza en situaciones sociales.\"', 'TyCkwmuvIGgN6iReMGT4AnPSHCwKAUJgWKReHiYr.webp', '2024-11-26 15:44:55', '2024-11-26 15:44:55'),
+(4, 'Clara Jiménez', 'Lipodermoplastia', '\"Después de tener a mis hijos, luché con la flacidez en mi abdomen. La lipodermoplastia fue la solución perfecta. Me siento más tonificada y mi piel se ve mucho mejor. Estoy muy agradecida por el cambio que he visto en mi cuerpo.\"', 'ULFLMqt2WObih3dJrS0SBAFeuASTngMPcFcGmH7j.webp', '2024-11-26 15:45:33', '2024-11-26 15:45:33'),
+(5, 'Patricia López', 'Lifting Facial', '\"El lifting facial ha sido una de las mejores decisiones que he tomado. Me sentía cansada y envejecida, pero ahora mi rostro luce más firme y juvenil. El proceso fue cuidadoso y los resultados han revitalizado mi apariencia y mi confianza.\"', 'zIKtQ8xpptSVG056fwX3gh960GBgpI711S5g3NBy.webp', '2024-11-26 15:46:22', '2024-11-26 15:46:22'),
+(6, 'Mariana Torres', 'Liposucción + Lipoinjerto', '\"Siempre quise un contorno más definido. La combinación de liposucción y lipoinjerto me permitió eliminar grasa del abdomen y darle forma a mis glúteos. Estoy encantada con los resultados y me siento más segura y feliz con mi figura.\"', 'GjuNWkTBJaF9J0yOB6VTB4hescif9CZktoJw287V.webp', '2024-11-26 15:46:56', '2024-11-26 15:46:56'),
+(7, 'Sofía Martínez', 'Blefaroplastia', '\"La blefaroplastia ha transformado mi mirada. Antes, las bolsas bajo mis ojos me hacían parecer cansada. Ahora, me veo más despierta y fresca. La cirugía fue rápida y la recuperación fue más fácil de lo que esperaba. Estoy muy satisfecha.\"', '7GdEYJKWn65TbjuWa3BxkxLusiwcFKMS7pI2E4zz.webp', '2024-11-26 15:47:20', '2024-11-26 15:47:20'),
+(8, 'Valentina Sánchez', 'Ácido Hialurónico', '\"Decidí aumentar el volumen de mis labios con ácido hialurónico y no podría estar más feliz con el resultado. El proceso fue indoloro y los resultados son naturales. Me siento más atractiva y segura al sonreír.\"', 'IdsweUMEqXwAmGRUpFE5tRdi3xDZPbl6YiouicWo.webp', '2024-11-26 15:47:55', '2024-11-26 15:47:55');
+
+-- Tabla Tratamiento --
+INSERT INTO `tratamientos` (`id`, `nombre`, `descripcion_corta`, `descripcion_larga`,`costo` , `imagen`, `created_at`, `updated_at`) VALUES
+(1, 'Ácido Hialurónico', 'Suaviza líneas y realza volúmenes perdidos. Ideal para lograr una piel hidratada y rejuvenecida.', 'El tratamiento con ácido hialurónico implica inyecciones para hidratar la piel, rellenar arrugas y dar volumen a áreas como labios y mejillas. Es una sustancia natural que se encuentra en el cuerpo, lo que lo hace generalmente seguro. Los efectos son temporales, por lo que se necesitan sesiones de mantenimiento.',80.00, 'img1.webp', NULL, NULL),
+(2, 'Inyecciones de Botox', 'Redescubre una piel tersa y juvenil. \r\nTratamientos rápidos y efectivos\r\n para suavizar líneas de expresión \r\ny arrugas.', 'El Botox es una toxina botulínica utilizada en tratamientos estéticos para reducir arrugas y líneas de expresión. Funciona al paralizar temporalmente los músculos subyacentes, lo que suaviza la apariencia de la piel. Es comúnmente aplicado en la frente, entrecejo y alrededor de los ojos. Los efectos suelen durar entre tres y seis meses, requiriendo tratamientos de mantenimiento para conservar los resultados.',60.00, 'img2.webp', NULL, NULL),
+(3, 'Menton y Pomulos', 'Logra un contorno facial definido y armónico con tratamientos estéticos que realzan la forma de tu mentón y pómulos.', 'El tratamiento de mentón y pómulos se realiza para mejorar el contorno facial y equilibrar la proporción del rostro. Se utilizan técnicas como inyecciones de ácido hialurónico o implantes para aumentar el volumen y definir estas áreas. Esto ayuda a crear un perfil más armónico y resaltar las características faciales. Los resultados son temporales en el caso del ácido hialurónico, mientras que los implantes pueden ser permanentes.',30.00, 'img3.webp', NULL, NULL),
+(4, 'Láser facial', 'El láser facial es una técnica innovadora que rejuvenece la piel al eliminar imperfecciones y estimular la producción de colágeno.', 'El láser facial es un tratamiento estético que utiliza luz láser para mejorar la textura y apariencia de la piel. Es efectivo para eliminar manchas, reducir arrugas, minimizar poros y tratar problemas como el acné y la rosácea. El procedimiento estimula la producción de colágeno, lo que resulta en una piel más firme y rejuvenecida. Los resultados pueden ser visibles después de una o varias sesiones, dependiendo del tipo de láser y las necesidades del paciente.',90.00, 'img4.webp', NULL, NULL);
+
+-- Tabla Resultado --
+INSERT INTO `resultados` (`id`, `servicio`, `caso`, `descripcion`, `antes`, `despues`, `created_at`, `updated_at`) VALUES
+(1, 'rinoplastia', '1', 'La paciente se presentó con el deseo de mejorar la apariencia de su nariz, que consideraba desproporcionada en relación con el resto de su rostro. Específicamente, mencionó que la punta de su nariz era muy ancha y que había una ligera desviación en el dorso nasal.', 'rino1_1.webp', 'rino1_2.webp', NULL, NULL),
+(2, 'rinoplastia', '2', 'El paciente acudió a la consulta para evaluar la posibilidad de realizar una rinoplastia. Su principal preocupación era la apariencia de su nariz, que consideraba demasiado prominente y con una joroba en el dorso. También mencionó dificultades para respirar adecuadamente debido a una posible desviación del tabique nasal.', 'rino2_1.webp', 'rino2_2.webp', NULL, NULL),
+(3, 'mamoplastia', '1', 'La paciente buscaba aumentar el tamaño de sus senos, ya que sentía que eran demasiado pequeños en comparación con su figura. También mencionó que deseaba mejorar la forma de sus senos, que habían perdido volumen tras la lactancia.', 'mamo1_1.webp', 'mamo1_2.webp', NULL, NULL),
+(4, 'mamoplastia', '2', 'La paciente llegó con el deseo de aumentar el tamaño de sus senos, ya que se sentía insatisfecha con su forma y volumen, especialmente después de la pérdida de peso. Buscaba un aspecto más equilibrado y una mayor confianza en su imagen.', 'mamo2_1.webp', 'mamo2_2.webp', NULL, NULL),
+(5, 'blefaroplastia', '1', 'La paciente se presentó preocupado por el aspecto de sus párpados, que mostraban signos de envejecimiento, como bolsas y piel flácida. Deseaba una apariencia más fresca y descansada.', 'blefa1_1.webp', 'blefa1_2.webp', NULL, NULL),
+(6, 'blefaroplastia', '2', 'La paciente buscó la consulta para tratar la flacidez de los párpados superiores e inferiores, que le daban un aspecto cansado y envejecido. Deseaba un tratamiento que la hiciera lucir más joven y descansada.', 'blefa2_1.webp', 'blefa2_2.webp', NULL, NULL),
+(7, 'acido', '1', 'La paciente llegó buscando un aumento en el volumen de sus labios, ya que sentía que eran demasiado delgados y deseaba una apariencia más definida y sensual.', 'acido1_1.webp', 'acido1_2.webp', NULL, NULL),
+(8, 'acido', '2', 'La paciente deseaba corregir la asimetría de sus labios, que le generaba inseguridad. Buscaba un tratamiento que no solo aumentara el volumen, sino que también equilibrara la forma de sus labios.', 'acido2_1.webp', 'acido2_2.webp', NULL, NULL),
+(9, 'botox', '1', 'La paciente se presentó preocupada por las líneas de expresión que comenzaban a aparecer en su rostro, especialmente en la frente y entrecejo. Quería un tratamiento que le ayudara a verse más joven sin recurrir a cirugía..', 'botox1_1.webp', 'botox1_2.webp', NULL, NULL),
+(10, 'botox', '2', 'La paciente llegó buscando reducir las arrugas en su frente y las líneas de expresión alrededor de los ojos. Se sentía insegura con su apariencia y deseaba un aspecto más juvenil y fresco.', 'botox2_1.webp', 'botox2_2.webp', NULL, NULL),
+(11, 'menton', '1', 'a paciente se presentó con el deseo de mejorar la definición de su mentón y pómulos, ya que sentía que su rostro carecía de contornos marcados. Buscaba un tratamiento que realzara su perfil sin necesidad de cirugía invasiva.', 'menton1_1.webp', 'menton1_2.webp', NULL, NULL),
+(12, 'menton', '2', 'La paciente acudió a la consulta porque deseaba realzar sus pómulos y definir su mentón, ya que sentía que su rostro era demasiado redondeado. Buscaba un aspecto más estilizado y juvenil.', 'menton2_1.webp', 'menton2_2.webp', NULL, NULL),
+(13, 'lifting facial', '1', 'La paciente se presentó preocupada por la flacidez en su rostro y el cuello, así como por las líneas de expresión que se habían acentuado con el tiempo. Deseaba un rejuvenecimiento facial completo para recuperar un aspecto más juvenil y fresco.', 'lift1_1.webp', 'lift1_2.webp', NULL, NULL),
+(14, 'lifting facial', '2', 'La paciente llegó buscando un tratamiento para combatir la caída de sus mejillas y la aparición de arrugas profundas. Quería un procedimiento que restaurara la juventud de su rostro sin parecer artificial.', 'lift2_1.webp', 'lift2_2.webp', NULL, NULL),
+(15, 'liposuccion+lipoinjerto', '1', 'La paciente llegó buscando mejorar su figura, específicamente deseaba eliminar la grasa del abdomen y la cintura, y transferirla a sus glúteos para lograr un contorno más equilibrado y armonioso.', 'lipo1_1.webp', 'lipo1_2.webp', NULL, NULL),
+(16, 'liposuccion+lipoinjerto', '2', 'La paciente acudió con el objetivo de eliminar la grasa acumulada en el abdomen y la cintura, deseando también mejorar la forma de sus glúteos mediante lipoinjerto.', 'lipo2_1.webp', 'lipo2_2.webp', NULL, NULL),
+(17, 'lipodermoplastia', '1', 'a paciente acudió en busca de un tratamiento para eliminar la grasa localizada en el abdomen y mejorar la apariencia de la piel, que había perdido elasticidad tras varias etapas de pérdida de peso.', 'lipodermo1_1.webp', 'lipodermo1_2.webp', NULL, NULL),
+(18, 'lipodermoplastia', '2', 'La paciente llegó con el deseo de eliminar la grasa persistente en el abdomen y mejorar la apariencia de su piel flácida después de haber tenido dos hijos.', 'lipodermo2_1.webp', 'lipodermo2_2.webp', NULL, NULL);

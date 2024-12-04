@@ -12,5 +12,5 @@ export default defineConfig({
             refresh: true,
         }),
         vue() // Asegúrate de que el plugin de Vue esté aquí
-    ],
+],
 });

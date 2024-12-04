@@ -44,10 +44,16 @@ x-init="setTimeout(() => { loading = false; content = true; }, 1000);
             </div>
         
             <!-- Contenido centrado en primer plano -->
-            <div class="relative z-10 flex w-full h-[300px] justify-center items-center " id="frame3">
+            <div class="relative z-10 flex w-full h-[300px] justify-center items-center" id="frame3">
                 <div class="hidden-element">
                     <p class="text-white text-5xl max-md:text-4xl">
-                        Resultados
+                        @if (Route::is('resultados.cirugias'))
+                            Resultados Cirugías
+                        @elseif (Route::is('resultados.tratamientos'))
+                            Resultados Tratamientos
+                        @else
+                            Resultados
+                        @endif
                     </p>
                 </div>
             </div>

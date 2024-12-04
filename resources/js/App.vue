@@ -7,19 +7,28 @@
       <div class="_inner ">
           <div class="card-input">
             
-            <label for="cardNumber" class="card-input__label">Card Number</label>
+            <label for="cardNumber" class="card-input__label">Numero de tarjeta</label>
             <input type="text" id="cardNumber" class="card-input__input" v-mask="generateCardNumberMask"
               v-model="cardNumber" @focus="focusInput" @blur="blurInput" data-ref="cardNumber" autocomplete="off">
           </div>
           <div class="card-input">
-            <label for="cardName" class="card-input__label">Card Holders</label>
-            <input type="text" id="cardName" class="card-input__input" v-model="cardName" @focus="focusInput"
-              @blur="blurInput" data-ref="cardName" autocomplete="off">
-          </div>
+            <label for="cardName" class="card-input__label">Nombre del titular</label>
+            <input 
+            type="text" 
+            id="cardName" 
+            class="card-input__input" 
+            v-model="cardName" 
+            @input="filterLetters" 
+            @focus="focusInput"
+            @blur="blurInput" 
+            data-ref="cardName" 
+            autocomplete="off"
+            >
+        </div>
           <div class="card-form__row">
             <div class="card-form__col">
               <div class="card-form__group">
-                <label for="cardMonth" class="card-input__label">Expiration Date</label>
+                <label for="cardMonth" class="card-input__label">Fecha de expiracion</label>
                 <select class="card-input__input -select" id="cardMonth" v-model="cardMonth" @focus="focusInput"
                   @blur="blurInput" data-ref="cardDate">
                   <option value="" disabled selected>Month</option>
@@ -366,6 +375,10 @@ export default {
     methods: {
         flipCard(status) {
             this.isCardFlipped = status;
+        },
+        filterLetters(event) {
+            // Remove any character that is not a letter or space
+            this.cardName = event.target.value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, '');
         },
         focusInput(e) {
             this.isInputFocused = true;

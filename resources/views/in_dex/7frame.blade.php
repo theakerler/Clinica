@@ -1,22 +1,22 @@
 <div class="w-full  bg-white opacity-100 relative flex justify-center items-start " x-data="{ openQuestion: null }">
-        <div class="w-[60%]  flex flex-col gap-4  max-xl:w-[80%] max-sm:w-[85%] ">
+        <div class="w-[60%]  flex flex-col gap-4 ">
             <div >
-                <div class="flex w-full justify-center  ">
+                <div class="flex w-full justify-center ">
                     <p class="w-[200px] text-xl font-bold text-center">
                         Preguntas Frecuentes
                     </p>
                 </div>
             </div>
             <!-- Pregunta 1 -->
-            <div class="border border-gray-400 p-3 max-sm:py-5 ">
-                <button class="flex items-center gap-x-2 h-[50px] " @click="openQuestion = (openQuestion === 1 ? null : 1)">
-                    <svg x-show="openQuestion !== 1"  width="16" height="16"  viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="border border-gray-400 p-3">
+                <button class="flex items-center gap-x-2 h-[50px]" @click="openQuestion = (openQuestion === 1 ? null : 1)">
+                    <svg x-show="openQuestion !== 1" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8 0.75C8.69 0.75 9.25 1.31 9.25 2V6.75H14C14.3315 6.75 14.6495 6.8817 14.8839 7.11612C15.1183 7.35054 15.25 7.66848 15.25 8C15.25 8.33152 15.1183 8.64946 14.8839 8.88388C14.6495 9.1183 14.3315 9.25 14 9.25H9.25V14C9.25 14.3315 9.1183 14.6495 8.88388 14.8839C8.64946 15.1183 8.33152 15.25 8 15.25C7.66848 15.25 7.35054 15.1183 7.11612 14.8839C6.8817 14.6495 6.75 14.3315 6.75 14V9.25H2C1.66848 9.25 1.35054 9.1183 1.11612 8.88388C0.881696 8.64946 0.75 8.33152 0.75 8C0.75 7.66848 0.881696 7.35054 1.11612 7.11612C1.35054 6.8817 1.66848 6.75 2 6.75H6.75V2C6.75 1.31 7.31 0.75 8 0.75Z" fill="black"/>
                     </svg>
                     <svg x-show="openQuestion === 1" class="fill-teal-500" width="16" height="16" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 1C0 0.734784 0.105357 0.48043 0.292893 0.292893C0.48043 0.105357 0.734784 0 1 0H13C13.2652 0 13.5196 0.105357 13.7071 0.292893C13.8946 0.48043 14 0.734784 14 1C14 1.26522 13.8946 1.51957 13.7071 1.70711C13.5196 1.89464 13.2652 2 13 2H1C0.734784 2 0.48043 1.89464 0.292893 1.70711C0.105357 1.51957 0 1.26522 0 1Z" />
                     </svg>
-                    <p :class="{ 'text-teal-600': openQuestion === 1 }" class="text-start max-sm:w-[300px] text-wrap ">¿Qué tratamientos ofrece la Clínica Estética Ronmy Mendez?</p>
+                    <p :class="{ 'text-teal-600': openQuestion === 1 }">¿Qué tratamientos ofrece la Clínica Estética Ronmy Mendez?</p>
                 </button>
                 <p x-show="openQuestion === 1"
                     x-transition:enter="show-animation"
@@ -69,7 +69,7 @@
                         x-transition:leave="transition ease-in duration-0" 
                         x-transition:leave-start="opacity-100 translate-y-0"
                         x-transition:leave-end="opacity-0 -translate-y-4"
-                    class="w-full h-[450px]" loading="lazy"  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1913.4575151552729!2d-71.51982214662705!3d-16.429141236524984!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b23fcffffff%3A0xf3a2f908ae973204!2sTecsup!5e0!3m2!1ses-419!2spe!4v1730813567712!5m2!1ses-419!2spe"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    class="w-full h-[450px]"  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1913.4575151552729!2d-71.51982214662705!3d-16.429141236524984!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91424b23fcffffff%3A0xf3a2f908ae973204!2sTecsup!5e0!3m2!1ses-419!2spe!4v1730813567712!5m2!1ses-419!2spe"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             
             <!-- Pregunta 4 -->
@@ -128,6 +128,7 @@
                 </p>
             </div>
         </div>
+        
 
         
     </div>

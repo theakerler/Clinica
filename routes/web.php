@@ -51,10 +51,6 @@ Route::get('/nosotros', function () {
     return view('nosotros.nosotros');
 });
 
-// Mapa
-Route::get('/map', function () {
-    return view('prueba');
-});
 
 // Pagos
 Route::get('/reservas/pago', function () {
